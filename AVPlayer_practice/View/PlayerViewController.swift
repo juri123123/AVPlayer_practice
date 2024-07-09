@@ -20,6 +20,17 @@ final class PlayerViewController: BaseViewController {
     private var totalTimeLabel = UILabel()
     private var playButton = UIButton()
     
+    private var totalTime: Float64 = 0 {
+        didSet {
+            totalTimeLabel.text = changeFloatTimeToLabel(totalTime)
+        }
+    }
+    private var currentTime: Float64 = 0 {
+        didSet {
+            currentTimeLabel.text = changeFloatTimeToLabel(currentTime)
+        }
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -51,7 +62,7 @@ final class PlayerViewController: BaseViewController {
         
         timeSlider = {
            let slider = UISlider()
-            
+            slider.addTarget(self, action: #selector(sliderValueChanged), for: .valueChanged)
             return slider
         }()
         
@@ -117,6 +128,13 @@ final class PlayerViewController: BaseViewController {
         }
     }
     
+    @objc
+    private func sliderValueChanged() {
+        currentTime = Float64(timeSlider.value) * totalTime
+        player.seek(to: CMTimeMakeWithSeconds(currentTime, preferredTimescale: Int32(NSEC_PER_SEC)))
+
+    }
+    
     // 현재까지 재생된 시간 정보를 획득
     private func addPeriodicTimeObserver() {
         //  1초마다 데이터를 받기
@@ -132,12 +150,12 @@ final class PlayerViewController: BaseViewController {
                 !totalTimeFloat.isNaN,
                 !totalTimeFloat.isInfinite else { return }
             
-            self?.currentTimeLabel.text = self?.changeFloatToLabel(currentTimeFloat)
-            self?.totalTimeLabel.text = self?.changeFloatToLabel(totalTimeFloat)
+            self?.totalTime = totalTimeFloat
+            self?.currentTime = currentTimeFloat
         })
     }
     
-    private func changeFloatToLabel(_ time: Float64) -> String {
+    private func changeFloatTimeToLabel(_ time: Float64) -> String {
         let timeInt = Int(time)
         let minute = Int(timeInt / 60)
         let seconds = Int(timeInt % 60)
