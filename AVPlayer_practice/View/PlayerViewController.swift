@@ -28,6 +28,7 @@ final class PlayerViewController: BaseViewController {
     private var currentTime: Float64 = 0 {
         didSet {
             currentTimeLabel.text = changeFloatTimeToLabel(currentTime)
+            timeSlider.value = Float(currentTime / totalTime)
         }
     }
     
