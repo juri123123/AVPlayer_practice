@@ -19,7 +19,8 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         guard let windowScene = (scene as? UIWindowScene) else { return }
         
         let window = UIWindow(windowScene: windowScene)
-        let vc = PlayerViewController()
+        //TODO: root vc 바꾸기
+        let vc = VideoPlayViewController()
         window.rootViewController = vc
         self.window = window
         window.makeKeyAndVisible()

@@ -14,6 +14,8 @@
 		CB1FA5A82C3D0CB00056407F /* Base in Resources */ = {isa = PBXBuildFile; fileRef = CB1FA5A72C3D0CB00056407F /* Base */; };
 		CB1FA5B42C3D2DD00056407F /* PlayerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB1FA5B32C3D2DD00056407F /* PlayerViewController.swift */; };
 		CB1FA5B72C3D2E790056407F /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = CB1FA5B62C3D2E790056407F /* SnapKit */; };
+		CB1FA5BE2C3E77010056407F /* VideoPlayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB1FA5BD2C3E77010056407F /* VideoPlayViewController.swift */; };
+		CB1FA5C02C3E833B0056407F /* VideoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB1FA5BF2C3E833B0056407F /* VideoView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -25,6 +27,8 @@
 		CB1FA5A72C3D0CB00056407F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		CB1FA5A92C3D0CB00056407F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		CB1FA5B32C3D2DD00056407F /* PlayerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerViewController.swift; sourceTree = "<group>"; };
+		CB1FA5BD2C3E77010056407F /* VideoPlayViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoPlayViewController.swift; sourceTree = "<group>"; };
+		CB1FA5BF2C3E833B0056407F /* VideoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -97,6 +101,8 @@
 			children = (
 				CB1FA59F2C3D0CAF0056407F /* BaseViewController.swift */,
 				CB1FA5B32C3D2DD00056407F /* PlayerViewController.swift */,
+				CB1FA5BD2C3E77010056407F /* VideoPlayViewController.swift */,
+				CB1FA5BF2C3E833B0056407F /* VideoView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -177,8 +183,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CB1FA5C02C3E833B0056407F /* VideoView.swift in Sources */,
 				CB1FA5A02C3D0CAF0056407F /* BaseViewController.swift in Sources */,
 				CB1FA5B42C3D2DD00056407F /* PlayerViewController.swift in Sources */,
+				CB1FA5BE2C3E77010056407F /* VideoPlayViewController.swift in Sources */,
 				CB1FA59C2C3D0CAF0056407F /* AppDelegate.swift in Sources */,
 				CB1FA59E2C3D0CAF0056407F /* SceneDelegate.swift in Sources */,
 			);
