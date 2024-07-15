@@ -20,7 +20,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         
         let window = UIWindow(windowScene: windowScene)
         //TODO: root vc 바꾸기
-        let vc = VideoPlayViewController()
+        let vc = PIPViewController()
         window.rootViewController = vc
         self.window = window
         window.makeKeyAndVisible()
